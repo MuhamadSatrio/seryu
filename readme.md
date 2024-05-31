@@ -18,7 +18,7 @@ Cara penggunaan API:
 
 Hal yang perlu diperhatikan:
 
-1. Perlu register SignUp > Login > Refresh Token (ambli token yang akan digunakan untuk mengakses API lainnya)
+1. Perlu register SignUp > Login > Refresh Token (ambil token yang akan digunakan untuk mengakses API lainnya)
 2. Cara penggunakan bearer token yaitu tinggal kebagian authorization postman kemudian pilih type "Bearer Token" kemudian masukkan token yang telah kita ambil sebelumnya.
 2. Bagian API yang terdapat params silahkan ikuti sesuai yang ada pada postman
 3. API tugas yaitu API Postman dengan nama "get driver salary" dengan alamat http://localhost:7000/driver/salary?driver_code=DRIVER012&current=1&name=Driver Name 12&page_size=10&year=2024&month=3
