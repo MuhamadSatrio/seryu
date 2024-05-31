@@ -1,4 +1,4 @@
-Nama : Muhamad Satrio Kalbe Technical Test
+Nama : Muhamad Satrio Seryu Cargo Backend Test
 
 Tech yang digunakan adalah Typescript, NodeJS Express, PostgreSQL, dan Sequelize, Berikut adalah cara menjalankannya:
 
