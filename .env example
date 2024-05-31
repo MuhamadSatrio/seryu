@@ -1,0 +1,13 @@
+APP_NAME="NodeJS - API"
+APP_PORT=7000
+BASEURL=localhost
+APP_MODE=development
+
+JWT_TOKEN=sahdasidhsaidhiashdashdasdhjasjduryhjsdhushufusdhf
+JWT_REFRESH_TOKEN=eyuruirncndfbdsfdsjdjkfhsfshdqwoeruoquwerqryeqnsdjkfhasdfh
+
+DB_HOST=your host
+DB_PORT=your port
+DB_USERNAME=your username
+DB_PASSWORD=your DB_PASSWORD
+DB_NAME=your db name

@@ -70,7 +70,7 @@ interface Totals {
     count_shipments: number;
 }
 
-const GetDriver2 = async (req: Request, res: Response): Promise<Response> => {
+const GetDriverSalary = async (req: Request, res: Response): Promise<Response> => {
     try {
         const { page_size = '10', current = '1', name, driver_code, month, year } = req.query as {
             [key: string]: string | string[] | undefined;
@@ -84,24 +84,24 @@ const GetDriver2 = async (req: Request, res: Response): Promise<Response> => {
 
         const filter = Helper.applyFilter(filterParams);
 
-        const dateFilter: Record<string, any> = {};
-        const dateFilter2: Record<string, any> = {};
+        const dateFilterShipment: Record<string, any> = {};
+        const dateFilterDriverAttendance: Record<string, any> = {};
         if (month && year) {
             const startDate = new Date(`${year}-${month}-01`);
             const endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
-            dateFilter['shipment_date'] = {
+            dateFilterShipment['shipment_date'] = {
                 [Op.between]: [startDate, endDate]
             };
-            dateFilter2['attendance_date'] = {
+            dateFilterDriverAttendance['attendance_date'] = {
                 [Op.between]: [startDate, endDate]
             };
         } else if (year) {
             const startDate = new Date(`${year}-01-01`);
             const endDate = new Date(`${year}-12-31`);
-            dateFilter['shipment_date'] = {
+            dateFilterShipment['shipment_date'] = {
                 [Op.between]: [startDate, endDate]
             };
-            dateFilter2['attendance_date'] = {
+            dateFilterDriverAttendance['attendance_date'] = {
                 [Op.between]: [startDate, endDate]
             };
         }
@@ -114,7 +114,7 @@ const GetDriver2 = async (req: Request, res: Response): Promise<Response> => {
                     include: [
                         {
                             model: Shipment,
-                            where: dateFilter
+                            where: dateFilterShipment
                         }
                     ]
                 }
@@ -124,7 +124,7 @@ const GetDriver2 = async (req: Request, res: Response): Promise<Response> => {
         const driverAttendances = await DriverAttendance.findAndCountAll({
             where: {
                 attendance_status: true,
-                ...dateFilter2
+                ...dateFilterDriverAttendance
             }
         });
 
@@ -208,4 +208,4 @@ const GetDriver2 = async (req: Request, res: Response): Promise<Response> => {
 }
 
 
-export default { GetDriver, GetDriver2 };
+export default { GetDriver, GetDriverSalary };

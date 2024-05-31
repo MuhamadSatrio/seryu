@@ -11,7 +11,7 @@ import pagination from '../middleware/Pagination';
 const router = express.Router();
 
 router.get("/driver", Authorization.Authenticated, pagination, DriverControllers.GetDriver);
-router.get("/driver/shipment-cost2", Authorization.Authenticated, DriverControllers.GetDriver2);
+router.get("/driver/salary", Authorization.Authenticated, DriverControllers.GetDriverSalary);
 
 router.get("/role", Authorization.Authenticated, RoleController.GetRole);
 router.post("/role",Authorization.Authenticated, Authorization.AdminRole, RoleController.CreateRole);
