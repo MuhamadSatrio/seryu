@@ -12,7 +12,7 @@ Cara penggunaan API:
 4. Jalankan kode berikut untuk membuat database “npx sequelize-cli db:create”
 5. Jalankan kode migration untuk migrate tabel “npx sequelize-cli db:migrate”
 6. Jalankan kode untuk memasukkan data seeders yang sudah ada “npx sequelize-cli db:seed:all” (berisi data role dummy)
-7. kemudian masukkan seeders yang diberikan seryu cargo yang dapat dilihat pada file zip seryu_backend_test_database_data.zip di github ini. (File migration didalam file zip tidak perlu dijalankan, cukup seeders dengan format csv saja.)
+7. kemudian masukkan seeders yang diberikan seryu cargo kedalam database anda yang dapat dilihat pada file zip seryu_backend_test_database_data.zip di github ini. (File migration didalam file zip tidak perlu dijalankan, cukup seeders dengan format csv saja.)
 7. Jalankan di terminal “npm run dev”
 8. Buka Postman (Dokumentasi API link diatas) dan coba jalankan sesuai tes yang ada.
 
